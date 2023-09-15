@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fried Eggs - Token Access</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body id="indexPage">
+<!-- Hidden Rabbit Hole Video for Preloading -->
+<video id="preloadRabbitHoleVideo" preload="auto" style="display:none;">
+    <source src="RabbitHole.webm" type="video/webm">
+</video>
+    <script>
+window.addEventListener('DOMContentLoaded', (event) => {
+    var easterEggImg = document.getElementById('easterEgg');
+
+    easterEggImg.addEventListener('click', async function() {
+        // Try to connect to MetaMask
+        let isConnected = await connectToMetaMask();
+
+        if (isConnected) {
+            // Handle any specific behavior you want here after connecting to MetaMask
+            // For instance, you can change the image source or redirect to another page.
+            // easterEggImg.src = 'new-image-path.png';
+        }
+    });
+});
+
+async function connectToMetaMask() {
+    if (typeof window.ethereum !== 'undefined') {
+        try {
+            // Request account access
+            const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
+            const account = accounts[0];
+            console.log('Connected with account:', account);
+            return true;
+        } catch (error) {
+            if (error.code === 4001) {
+                // User rejected request
+                console.log('Permission denied!');
+            } else {
+                console.error(error);
+            }
+            return false;
+        }
+    } else {
+        console.log('MetaMask is not installed!');
+        return false;
+    }
+}
+    </script>
+
+    <body class="index">
+    <div id="content">
+        <a href="home.html"><img id="easterEgg" src="assets/EasterEgg.png" alt="Easter Egg"></a>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

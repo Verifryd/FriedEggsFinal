@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fried Eggs</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body class="homePage">
+<!-- Rabbit Hole Video Splash Screen -->
+<video id="rabbitHoleVideo" autoplay muted onended="this.style.display='none'">
+    <source src="assets/RabbitHole.webm" type="video/webm">
+    Your browser does not support the video tag.
+</video>
+
+    <header>
+        <img src="assets/FriedEggs.png" alt="Logo">
+        <a href="home.html">
+        <img src="assets/Verifryd.png" alt="Portfolio">
+        <a href="https://verifrydvideo.myportfolio.com/">
+        </a>
+    </header>
+    <main>
+    <div class="product-container">
+        <div class="product">
+            <a href="Faberge.html"><img src="assets/Faberge.gif" alt="Fabergé Egg">
+        </div>
+    <div class="product-container">
+        <div class="product">
+            <a href="KringleKronic.html" id="kringleLink"><img src="assets/KringleKronic.gif" alt="Kringle Kronic">
+        </div>
+    <div class="product-container">
+        <div class="product">
+            <a href="DontPressTheEgg.html" id="DPtELink"><img src="assets/DPtE.gif" alt="Don't Press the Egg">
+        </div>
+<script>
+    // Check if the video has been played in this session
+    if (!sessionStorage.getItem("videoPlayedThisSession")) {
+        // If not, play the video
+        document.getElementById("rabbitHoleVideo").play();
+
+        // Mark the video as played for this session
+        sessionStorage.setItem("videoPlayedThisSession", "true");
+    } else {
+        // If the video has been played in this session, hide it
+        document.getElementById("rabbitHoleVideo").style.display = 'none';
+    }
+</script>
+    </main>
+    <footer>
+        <a href="Classifried.html">
+        <button id="classifriedButton">Classifried (requires 3 early eggccess tokens)</button>
+        <a href="FriedRedeem.html">
+        <button id="friedRedeemButton">Fried Redeem?</button>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

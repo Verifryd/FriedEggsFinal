@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<title>Fried Eggs - Fabergé Egg</title>
+<link href="styles.css" rel="stylesheet" type="text/css"/>
+<script src="dist/bundle.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body class="productPage">
+<header>
+<img alt="Logo" src="assets/FriedEggs.png"/>
+<a href="https://verifrydvideo.myportfolio.com/">
+<img alt="Portfolio" src="assets/Verifryd.png"/>
+</a>
+</header>
+<main>
+<!-- Fog Video Overlay -->
+<div class="fogVideo">
+<video autoplay="" id="fogVideo" loop="" muted="">
+<source src="assets/FabergeFog.webm" type="video/webm"/>
+                Your browser does not support the video tag.
+            </video>
+</div>
+<div class="laser-beams">
+<div class="laser"></div>
+<div class="laser"></div>
+<div class="laser"></div>
+<!-- Add more laser divs if required -->
+</div>
+<div class="product">
+<img alt="Fabergé Egg" src="assets/Faberge.gif" img id="fabergeImage"/>
+
+<video id="productVideo" src="assets/CutsceneA.mp4" style="display: none;"></video>
+<button class="purchase" id="purchaseButton">Steal Priceless Art</button>
+</div>
+<button class="enableEthereumButton btn">Enable Ethereum</button>
+<button class="sendEthButton btn">Send ETH</button>
+</main>
+<footer>
+<button class="backButton" onclick="location.href='home.html'">Back</button>
+<button class="nextButton" disabled="" id="nextButton" onclick="location.href='KringleKronic.html'">Next Egg</button>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
+<script>
+  (async () => {
+      const accounts = await ethereum.request({ method: 'eth_accounts' });
+      const ethereumButton = document.querySelector('.enableEthereumButton');
+      const sendEthButton = document.querySelector('.sendEthButton');
+          
+      // Send Ethereum to an address
+      sendEthButton.addEventListener('click', async () => {
+          try {
+              const transactionHash = await ethereum.request({
+                  method: 'eth_sendTransaction',
+                  params: [{
+                      to: '0xCa7a27b54a0b318e547d810c4a26CAaa0BACF8a4',
+                      from: accounts[0], // Using the first account from the accounts array
+                      value: '0',
+                      gasLimit: '0x5028',
+                      maxPriorityFeePerGas: '0x3b9aca00',
+                      maxFeePerGas: '0x2540be400',
+                          }],
+              });
+              // Handle the result
+              console.log(transactionHash);
+          } catch (error) {
+              console.error(error);
+          }
+      });
+  
+      ethereumButton.addEventListener('click', () => {
+          getAccount();
+      });
+  
+      async function getAccount() {
+          accounts = await ethereum.request({ method: 'eth_requestAccounts' });
+      }
+  })();
+  </script>

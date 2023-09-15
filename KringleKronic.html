@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fried Eggs - Kringle Kronic</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body class="productPage">
+    <header>
+        <img src="assets/FriedEggs.png" alt="Logo">
+        <a href="https://verifrydvideo.myportfolio.com/">
+            <img src="assets/Verifryd.png" alt="Portfolio">
+        </a>
+    </header>
+    <main>
+<!-- Snow Video Overlay -->
+<video id="snowVideo" autoplay muted loop>
+    <source src="assets/KringleSnow.webm" type="video/webm">
+    Your browser does not support the video tag.
+</video>
+        <div class="product">
+            <img id="kringleImage" src="assets/KringleKronic.gif" alt="Kringle Kronic">
+            <video id="kringleproductVideo" src="assets/CutsceneB.mp4" style="display: none;"></video>
+            <button id="kringleproductButton" class="purchase">Burn</button>
+                <!-- Flame Video Overlay for Button -->
+                <video id="flameVideo" autoplay muted loop>
+                    <source src="assets/KringleButtonFire.webm" type="video/webm">
+                    Your browser does not support the video tag.
+                </video>
+        </div>
+    </main>
+    <footer>
+        <button class="backButton" onclick="location.href='home.html'">Back</button>
+        <button class="nextButton" onclick="location.href='DontPressTheEgg.html'" id="nextButton" disabled>Next Egg</button>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

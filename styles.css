@@ -1,0 +1,346 @@
+body.homePage {
+    background: linear-gradient(orange, yellow);
+    font-family: 'Rounds Black', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+body.productPage {
+    background: linear-gradient(orange, yellow);
+    font-family: 'Rounds Black', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    object-fit: contain;
+}
+
+.productPage {
+    background: linear-gradient(orange, yellow);
+    font-family: 'Rounds Black', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.homePage .product-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.homePage .product {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    min-width: auto;
+    min-height: auto;
+}
+
+.product img {
+    width: 25vw; /* or a percentage, e.g., width: 100%; */
+    height: auto; /* maintain aspect ratio */
+}
+
+
+/* Styles for mobile screens */
+@media (max-width: 768px) {
+    .homePage .product-container {
+        flex-direction: column; /* Stack children vertically */
+    }
+
+    .homePage .product {
+        display: flex; /* Switch from inline-flex to flex so each product takes the full width */
+        justify-content: center; /* Center the images horizontally */
+    }
+
+    .product img{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+
+#content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+#rabbitHoleButton {
+    background-color: transparent;
+    color: darkgrey;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+#indexPage {
+    background-color: white;
+    /* Other styles for the index page */
+}
+
+
+#verifrydImage {
+    width: 150px;
+    height: auto;
+}
+
+#friedeggsImage {
+    width: 150px;
+    height: auto;
+}
+
+
+button {
+  font-size: 3em; /* Adjust as needed */
+  padding: 10px 20px; /* Adjust as needed */
+  color: white; /* Adjust as needed */
+  background-color: orange; /* Adjust as needed */
+  border: 2 px;
+  border-radius: 5px; /* Adjust as needed */
+  cursor: pointer;
+  margin: 10px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: red; /* Adjust as needed */
+}
+
+.backButton, .nextButton {
+    margin-top: 5px; /* Adjust this value as needed */
+}
+
+#indexPage {
+    background: #fff;
+}
+
+
+
+#fabergeImage, #kringleImage, #DPtEImage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 70vh;
+    max-width: 90vw;
+    margin: 0;
+    object-fit: contain;
+    overflow-clip-margin: content-box;
+    overflow: clip;
+}
+
+#productVideo, #kringleproductVideo, #dpteproductVideo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 70vh;
+    max-width: 90vw;
+    margin: 0;
+    object-fit: contain;
+    overflow-clip-margin: content-box;
+    overflow: clip;
+}
+
+button:disabled {
+    pointer-events: none; /* Prevents clicking on the link */
+    background-color: #cccccc; /* grey background */
+    color: #888888; /* darker grey text */
+}
+
+
+#kringleLink, #DPtELink {
+    position: relative; /* Ensure the lock icon is positioned relative to the link */
+}
+
+#kringleLink.disabled, #DPtELink.disabled {
+    filter: grayscale(100%); /* Makes the link black and white */
+    pointer-events: none; /* Prevents clicking on the link */
+    opacity: 0.6; /* Adds a semi-transparent effect */
+    filter: blur(2px); 
+
+}
+
+#kringleLink.disabled::before, #DPtELink.disabled::before {
+    content: url('assets/lock-icon.png'); /* Display the lock icon */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the icon */
+    opacity: 0.6; /* Adds a semi-transparent effect */
+    z-index: 10;
+}
+
+.kringleImage {
+    position: absolute; /* Ensuring that .product has relative positioning */
+    overflow: hidden; /* Prevent content from stretching the canvas */
+    z-index: 0; /* Ensure the product container has a base z-index */
+    width: 80 vw;
+    height: 80 vh;  
+}
+
+.productPage .product {
+    overflow: hidden; /* Prevent content from stretching the canvas */
+    z-index: 0; /* Ensure the product container has a base z-index */
+    width: 80 vw;
+    height: 80 vh;
+}
+
+
+@keyframes flicker1 {
+    0% { opacity: 0.5; }
+    20% { opacity: 0.7; }
+    40% { opacity: 0.6; }
+    60% { opacity: 0.8; }
+    80% { opacity: 0.5; }
+    100% { opacity: 0.6; }
+}
+
+@keyframes flicker2 {
+    0% { opacity: 0.6; }
+    25% { opacity: 0.5; }
+    50% { opacity: 0.7; }
+    75% { opacity: 0.6; }
+    100% { opacity: 0.5; }
+}
+
+@keyframes flicker3 {
+    0% { opacity: 0.7; }
+    15% { opacity: 0.5; }
+    30% { opacity: 0.6; }
+    45% { opacity: 0.5; }
+    60% { opacity: 0.7; }
+    75% { opacity: 0.6; }
+    90% { opacity: 0.5; }
+    100% { opacity: 0.7; }
+}
+
+.laser-beams {
+    position: absolute; /* Absolute positioning */
+    top: 0;
+    left: 0;
+    width: 100vw; /* Stretching to the width of the browser's viewport */
+    height: 100vh; /* Stretching to the height of the browser's viewport */
+    z-index: 9; /* Setting a lower z-index to not block interactive elements */
+    overflow: hidden; /* Prevent content from stretching the canvas */
+    pointer-events: none; /* Ensures that mouse events pass through the laser beams */
+}
+
+.laser {
+    position: absolute;
+    background-color: rgba(255, 0, 0, 0.5); /* Translucent red */
+    width: 300vw; /* Stretching to the width of the browser's viewport */
+    height: 3px; /* Fixed height for lasers */
+    animation: flicker 3s infinite alternate; /* Applying the flicker effect */
+    box-shadow: 0 0 6px 3px rgba(255, 0, 0, 0.7); /* Horizontal offset, Vertical offset, Blur, Spread, and Color */
+}
+
+/* Adjusting positions and rotations for each laser */
+.laser:nth-child(1) {
+    top: 30%;
+    transform: rotate(-1deg);
+    animation: flicker1 4s infinite alternate;
+}
+
+.laser:nth-child(2) {
+    top: 50%;
+    transform: rotate(1deg);
+    animation: flicker1 4s infinite alternate;
+}
+
+.laser:nth-child(3) {
+    top: 70%;
+    transform: rotate(-2deg);
+    animation: flicker3 6s infinite alternate;
+}
+
+/* Fog Video Styling */
+#fogVideo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100vw;
+    min-height: 100vh;
+    width: auto;
+    height: auto;
+    z-index: -1; /* Ensuring the fog video overlays other content but below interactive elements */
+    opacity: .4;
+    transition: opacity 1s; /* Smooth transition for fading effect */
+    pointer-events: none; /* Ensures that mouse events pass through the laser beams */
+    overflow: hidden; /* Prevent content from stretching the canvas */
+}
+
+#snowVideo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100vw;
+    min-height: 100vh;
+    width: auto;
+    height: auto;
+    z-index: -1; /* Placing it behind the video container and buttons */
+    opacity: 1;
+    pointer-events: none; /* Ensures that mouse events pass through the laser beams */
+    overflow: hidden; /* Prevent content from stretching the canvas */
+}
+
+/* Flame Video Styling */
+#flameVideo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2; /* Placing it over the button but below other interactive elements */
+    opacity: .5;
+    pointer-events: none; /* Ensures that mouse events are not blocked by the flame video */
+}
+
+#kringleproductButton {
+    position: relative; /* Ensuring the flame video positions itself based on the button's dimensions */
+}
+
+#kringleproductButton:hover #flameVideo {
+    opacity: 1;
+}
+
+/* Rabbit Hole Video Styling */
+#rabbitHoleVideo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9999; /* Ensuring it's on top of everything else */
+    pointer-events: none; /* Ensures that mouse events are not blocked by the flame video */
+}
+
+#mayanBackgroundVideo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1; /* Above the gradient background but below main content */
+    background-size: cover;
+    opacity: .2;  /* Adding some transparency to let the gradient show through */
+    pointer-events: none; /* Ensures that mouse events are not blocked by the flame video */
+}
+
+
